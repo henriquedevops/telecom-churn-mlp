@@ -29,5 +29,11 @@ docs/          documentação e model card
 
 ## Dataset
 
-Telco Customer Churn — IBM Sample Dataset  
-Download: `kaggle datasets download blastchar/telco-customer-churn -p data/raw/ --unzip`
+Telco Customer Churn — IBM Sample Dataset
+
+```bash
+make download-data
+```
+
+Requer a [Kaggle CLI](https://github.com/Kaggle/kaggle-api) configurada (`~/.kaggle/kaggle.json`).  
+O arquivo é baixado e renomeado para `data/raw/telco_churn.csv` automaticamente.
