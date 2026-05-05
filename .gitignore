@@ -6,6 +6,7 @@ models/*.pkl
 models/*.joblib
 mlruns/
 mlartifacts/
+*.db
 
 # Python
 __pycache__/
