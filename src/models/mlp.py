@@ -14,7 +14,7 @@ class ChurnMLP(nn.Module):
     ) -> None:
         super().__init__()
         if hidden_dims is None:
-            hidden_dims = [64, 32]
+            hidden_dims = [128, 64]
 
         layers: list[nn.Module] = []
         prev_dim = input_dim
