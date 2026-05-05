@@ -9,7 +9,7 @@ RANDOM_SEED = 42
 TARGET_COLUMN = "Churn"
 TEST_SIZE = 0.15
 CV_FOLDS = 5
-CHURN_THRESHOLD = 0.5
+CHURN_THRESHOLD = 0.34  # threshold ótimo por análise de custo (FN=R$50, FP=R$10)
 
 NUMERIC_COLS = ["tenure", "MonthlyCharges", "TotalCharges"]
 CATEGORICAL_COLS = [
