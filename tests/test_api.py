@@ -3,10 +3,9 @@ from fastapi.testclient import TestClient
 
 from src.config import CHURN_THRESHOLD, MODELS_DIR
 
-_ARTIFACTS_EXIST = (
-    (MODELS_DIR / "churn_mlp.pt").exists()
-    and (MODELS_DIR / "preprocessor.joblib").exists()
-)
+_ARTIFACTS_EXIST = (MODELS_DIR / "churn_mlp.pt").exists() and (
+    MODELS_DIR / "preprocessor.joblib"
+).exists()
 
 VALID_PAYLOAD = {
     "SeniorCitizen": 0,

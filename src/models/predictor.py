@@ -4,7 +4,7 @@ import pandas as pd
 import torch
 
 from src.config import CHURN_THRESHOLD, MODELS_DIR
-from src.models.mlp import build_model, ChurnMLP
+from src.models.mlp import ChurnMLP, build_model
 
 _DEFAULT_PREPROCESSOR = MODELS_DIR / "preprocessor.joblib"
 _DEFAULT_MODEL = MODELS_DIR / "churn_mlp.pt"

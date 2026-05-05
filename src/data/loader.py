@@ -25,7 +25,9 @@ _SCHEMA = DataFrameSchema(
         "TechSupport": Column(str),
         "StreamingTV": Column(str),
         "StreamingMovies": Column(str),
-        "Contract": Column(str, pa.Check.isin(["Month-to-month", "One year", "Two year"])),
+        "Contract": Column(
+            str, pa.Check.isin(["Month-to-month", "One year", "Two year"])
+        ),
         "PaperlessBilling": Column(str, pa.Check.isin(["Yes", "No"])),
         "PaymentMethod": Column(str),
         "MonthlyCharges": Column(float, pa.Check.ge(0)),

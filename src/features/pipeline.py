@@ -27,7 +27,9 @@ def build_preprocessor() -> ColumnTransformer:
             ("num", StandardScaler(), _NUMERIC_ALL),
             (
                 "cat",
-                OneHotEncoder(drop="first", handle_unknown="ignore", sparse_output=False),
+                OneHotEncoder(
+                    drop="first", handle_unknown="ignore", sparse_output=False
+                ),
                 CATEGORICAL_COLS,
             ),
         ],
@@ -61,7 +63,10 @@ def split_data(
 def fit_preprocessor(X_train: pd.DataFrame, save: bool = True) -> ColumnTransformer:
     preprocessor = build_preprocessor()
     preprocessor.fit(X_train)
-    logger.info("Preprocessador ajustado — %d features de saída", preprocessor.transform(X_train).shape[1])
+    logger.info(
+        "Preprocessador ajustado — %d features de saída",
+        preprocessor.transform(X_train).shape[1],
+    )
 
     if save:
         path = MODELS_DIR / "preprocessor.joblib"
