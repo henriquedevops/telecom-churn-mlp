@@ -1,7 +1,6 @@
 import logging
 
 import mlflow
-import mlflow.sklearn
 import numpy as np
 from sklearn.dummy import DummyClassifier
 from sklearn.linear_model import LogisticRegression
@@ -47,8 +46,6 @@ def run_baseline(
         if extra_params:
             mlflow.log_params(extra_params)
         mlflow.log_metrics({k: round(v, 4) for k, v in metrics.items()})
-        pipe.fit(X, y)
-        mlflow.sklearn.log_model(pipe, "model")
 
     logger.info(
         "%s — AUC-ROC: %.4f | PR-AUC: %.4f | F1: %.4f",
