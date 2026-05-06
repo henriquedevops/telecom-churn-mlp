@@ -151,6 +151,18 @@ docs/
 
 ---
 
+## API em Produção
+
+Endpoint público hospedado no **GCP Cloud Run**:
+
+| | URL |
+|---|---|
+| Health | `GET https://telecom-churn-mlp-1016158003629.us-central1.run.app/health` |
+| Predição | `POST https://telecom-churn-mlp-1016158003629.us-central1.run.app/predict` |
+| Docs (Swagger) | `https://telecom-churn-mlp-1016158003629.us-central1.run.app/docs` |
+
+---
+
 ## Resultados
 
 | Modelo | AUC-ROC | PR-AUC | F1 | Accuracy |
