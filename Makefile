@@ -1,4 +1,8 @@
-.PHONY: install lint format test run download-data
+.PHONY: install lint format test run download-data docker-build docker-run docker-push
+
+IMAGE_NAME ?= telecom-churn-mlp
+PORT       ?= 8000
+GCP_PROJECT ?= my-gcp-project
 
 install:
 	pip install -e ".[dev]"
@@ -18,3 +22,13 @@ test:
 
 run:
 	uvicorn src.api.app:app --reload --port 8000
+
+docker-build:
+	docker build -t $(IMAGE_NAME) .
+
+docker-run:
+	docker run --rm -p $(PORT):$(PORT) $(IMAGE_NAME)
+
+docker-push:
+	docker tag $(IMAGE_NAME) gcr.io/$(GCP_PROJECT)/$(IMAGE_NAME)
+	docker push gcr.io/$(GCP_PROJECT)/$(IMAGE_NAME)
